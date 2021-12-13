@@ -1,17 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { onMessage, saveFormSubmission } from './service/mockServer';
 
 export default function Content() {
-  const callback = (x) => {
-    console.log(x);
-    saveFormSubmission(x);
-  };
-  useEffect(() => {
-    onMessage(callback);
-  }, []);
-  
   return (
     <Box sx={{marginTop: 3}}>
       <Typography variant="h4">Liked Form Submissions</Typography>
