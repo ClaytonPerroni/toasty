@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  toast-exercise:
+    build: .
+    container_name: toast-exercise
+    environment:
+      - SKIP_PREFLIGHT_CHECK=true
+    working_dir: /app
+    stdin_open: true
+    command: >
+      sh -c "npm install && npm start"
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+      - ./src:/app/src
+      - ./public:/app/public
