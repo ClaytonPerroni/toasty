@@ -19,10 +19,9 @@ function App() {
 
   useEffect(() => {
     onMessage(callback);
-  }, []);
+  }, [callback]);
 
   const handleLike = (data) => {
-    console.log(data)
     setOpen(false);
     setData(undefined);
     saveFormSubmission(data);

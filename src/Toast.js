@@ -16,7 +16,7 @@ export default function Toast({open, setOpen, data, handleLike}) {
 
   const action = (
     <React.Fragment>
-      <Button color="secondary" size="small" onClick={() => handleLike(data)}>
+      <Button size="small" onClick={() => handleLike(data)}>
         LIKE
       </Button>
       <IconButton
@@ -31,8 +31,9 @@ export default function Toast({open, setOpen, data, handleLike}) {
   );
 
   return (
-    <div>
+    <>
       <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right'}}
         open={!!open}
         onClose={handleClose}
         message={
@@ -45,6 +46,6 @@ export default function Toast({open, setOpen, data, handleLike}) {
         }
         action={action}
       />
-    </div>
+    </>
   );
 }

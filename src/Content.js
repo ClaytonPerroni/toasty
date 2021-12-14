@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { fetchLikedFormSubmissions } from './service/mockServer';
+import * as Styles from './styledToasts';
 
 export default function Content() {
   const [likedToasts, setLikedToasts] = useState([]);
@@ -18,15 +18,17 @@ export default function Content() {
 
   return (
     <Box sx={{marginTop: 3}}>
-      <Typography variant="h4">Liked Form Submissions</Typography>
+      <Styles.TypographyP variant="h4">Liked Form Submissions</Styles.TypographyP>
 
-      <Typography variant="body1" sx={{fontStyle: 'italic', marginTop: 1}}>
+      
         {likedToasts.map(toast => (
-          <div key={toast?.id} className="liked-toast">
-            <p>{toast?.data?.firstName}</p>
-          </div>
+          <Styles.Toast key={toast?.id}>
+            <Styles.TypographyP variant="body1" sx={{fontStyle: 'italic', marginTop: 1}}>
+              {`${toast?.data?.firstName} ${toast?.data?.lastName}, ${toast?.data?.email}`}
+            </Styles.TypographyP>
+          </Styles.Toast>
         ))}
-      </Typography>
+      
     </Box>
   );
 }
