@@ -11,15 +11,14 @@ function App() {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(undefined);
 
-
-  const callback = (toast) => {
-    setOpen(true);
-    setData(toast);
-  };
-
   useEffect(() => {
+    const callback = (toast) => {
+      setOpen(true);
+      setData(toast);
+    };
+
     onMessage(callback);
-  }, [callback]);
+  }, []);
 
   const handleLike = (data) => {
     setOpen(false);
