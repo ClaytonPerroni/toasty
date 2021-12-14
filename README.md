@@ -4,6 +4,9 @@ to start, run:
 docker-compose up
 ```
 
+Added some additional tests in `App.test.js` and `Header.test.js` to demonstrate usage.  
+Added workflow pipeline in `.github/workflows/node_ci.yml` to automate tests.  
+
 # Toast Exercise
 
 Welcome to the toast exercise! We just got a new project from the Product team to implement
