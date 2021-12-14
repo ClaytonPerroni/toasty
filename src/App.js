@@ -12,23 +12,33 @@ function App() {
   const [data, setData] = useState(undefined);
 
 
-  const callback = (x) => {
-    console.log(x);
+  const callback = (toast) => {
     setOpen(true);
-    setData(x);
-    // only save if the toast is liked
-    saveFormSubmission(x);
+    setData(toast);
   };
+
   useEffect(() => {
     onMessage(callback);
   }, []);
+
+  const handleLike = (data) => {
+    console.log(data)
+    setOpen(false);
+    setData(undefined);
+    saveFormSubmission(data);
+  }
 
   return (
     <>
       <Header createToast={setOpen} />
       <Container>
         <Content />
-        <Toast open={open} data={data} setOpen={setOpen} />
+        <Toast 
+          open={open} 
+          data={data} 
+          setOpen={setOpen} 
+          handleLike={handleLike} 
+        />
       </Container>
     </>
   );

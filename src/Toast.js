@@ -4,7 +4,7 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function Toast({open, setOpen, data}) {
+export default function Toast({open, setOpen, data, handleLike}) {
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -16,7 +16,7 @@ export default function Toast({open, setOpen, data}) {
 
   const action = (
     <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
+      <Button color="secondary" size="small" onClick={() => handleLike(data)}>
         LIKE
       </Button>
       <IconButton
