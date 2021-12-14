@@ -1,3 +1,9 @@
+# Author's Note
+to start, run:  
+```
+docker-compose up
+```
+
 # Toast Exercise
 
 Welcome to the toast exercise! We just got a new project from the Product team to implement
