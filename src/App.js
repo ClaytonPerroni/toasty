@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 
 import Header from './Header';
 import Content from './Content';
-import { onMessage, saveFormSubmission } from './service/mockServer';
+import { onMessage, saveFormSubmission, createMockFormSubmission } from './service/mockServer';
 import Toast from './Toast';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Header createToast={setOpen} />
+      <Header createToast={createMockFormSubmission} />
       <Container>
         <Content />
         <Toast 
